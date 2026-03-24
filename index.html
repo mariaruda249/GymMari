@@ -66,27 +66,46 @@
     }
 
     .home-screen {
-      padding: 18px 16px 124px;
+      padding: 20px 16px 124px;
     }
 
-    .brand {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 18px;
-    }
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 26px;
+  padding-top: 8px;
+}
 
-    .brand-icon {
-      width: 86px;
-      height: 86px;
-      border-radius: 28px;
-      background: var(--surface);
-      box-shadow: var(--shadow);
-      display: grid;
-      place-items: center;
-      font-size: 38px;
-      margin-bottom: 10px;
-    }
+.brand-logo {
+  width: 180px;
+  height: auto;
+  max-width: 70vw;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.10));
+}
+
+.brand-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #111111;
+  letter-spacing: 0.2px;
+  line-height: 1.1;
+}
+
+.brand-subtitle {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.4;
+  max-width: 260px;
+}
+
+
 
     .brand-title {
       font-size: 24px;
@@ -686,12 +705,12 @@
 <body>
   <div id="app">
     <section id="homeScreen" class="screen active home-screen">
-      <div class="brand">
-        <div class="brand-icon">
+      
+<div class="brand">
   <img src="Logo realistico.png" alt="GymMari logo" class="brand-logo" />
+  <div class="brand-title">gymmari!</div>
+  <div class="brand-subtitle">Le tue schede e la tua libreria esercizi</div>
 </div>
-        <div class="brand-title">gymmari!</div>
-      </div>
 
       <div id="homeContent"></div>
 
