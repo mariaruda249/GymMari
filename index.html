@@ -868,46 +868,34 @@
   <script>
     const STORAGE_KEY = "gymmari_state_v1";
 
-    const defaultState = {
-      selectedTab: "plans",
-      plans: [
-        {
-          id: String(Date.now()),
-          name: "Nuova Scheda",
-          workSeconds: 40,
-          restSeconds: 20,
-          rounds: 3,
-          exercises: [
-            { name: "Dumbbell Row" },
-            { name: "Table Row" },
-            { name: "Shoulder Press" },
-            { name: "Bicep Curl" },
-            { name: "Chair Dips" },
-            { name: "Plank" },
-            { name: "Russian Twist" },
-            { name: "Hollow Hold" }
-          ]
-        }
-      ],
-      library: [
-        { name: "Push Up" },
-        { name: "Squat" },
-        { name: "Plank" },
-        { name: "Dumbbell Row" },
-        { name: "Shoulder Press" },
-        { name: "Affondi" },
-        { name: "Burpees" },
-        { name: "Mountain Climbers" },
-        { name: "Russian Twist" },
-        { name: "Jumping Jacks" }
-      ],
-      history: []
-    };
+const defaultState = {
+  selectedTab: "plans",
+  plans: [],
+  library: [],
+  history: []
+};
 
-    let state = loadState();
+async function loadDefaultDataFile() {
+  const response = await fetch("./data/default-data.json");
+
+  if (!response.ok) {
+    throw new Error("Impossibile caricare default-data.json");
+  }
+
+  return await response.json();
+}
+    
+    let state = null;
     let editingPlanIndex = null;
     let editingExercises = [];
 
+initApp();
+
+async function initApp() {
+  state = await loadState();
+  renderHome();
+}
+    
     let workout = {
       active: false,
       finished: false,
@@ -972,19 +960,34 @@
 
     renderHome();
 
-    function loadState() {
-      try {
-        const raw = localStorage.getItem(STORAGE_KEY);
-        if (!raw) return clone(defaultState);
-        const parsed = JSON.parse(raw);
-        return {
-          ...clone(defaultState),
-          ...parsed
-        };
-      } catch {
-        return clone(defaultState);
-      }
+async function loadState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      return {
+        ...clone(defaultState),
+        ...parsed
+      };
     }
+
+    const dataFile = await loadDefaultDataFile();
+
+    const initialState = {
+      selectedTab: "plans",
+      plans: dataFile.plans || [],
+      library: dataFile.library || [],
+      history: []
+    };
+
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(initialState));
+    return initialState;
+  } catch (error) {
+    console.error("Errore caricamento stato:", error);
+    return clone(defaultState);
+  }
+}
 
     function saveState() {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
