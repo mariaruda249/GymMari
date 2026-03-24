@@ -6,18 +6,22 @@
   <title>GymMari!</title>
   <style>
     :root {
-      --bg: #f5f5f7;
-      --surface: #ffffff;
-      --text: #141414;
-      --muted: #6c7280;
-      --line: #e7e8ee;
-      --accent: #4b3fb4;
+      --bg: #f3f2f7;
+      --surface: rgba(255,255,255,0.90);
+      --surface-strong: #ffffff;
+      --text: #111111;
+      --muted: #6f7380;
+      --line: #e7e6ef;
+      --accent: #5a46d6;
+      --accent-soft: #ece8ff;
+      --accent-deep: #3e2ea8;
       --work: #2e7d32;
       --rest: #c62828;
       --idle: #1a237e;
-      --shadow: 0 8px 24px rgba(0,0,0,0.08);
-      --radius-xl: 28px;
-      --radius-lg: 20px;
+      --shadow-soft: 0 10px 30px rgba(20, 20, 20, 0.06);
+      --shadow-medium: 0 18px 40px rgba(46, 35, 120, 0.10);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
       --radius-md: 16px;
       --radius-sm: 12px;
     }
@@ -30,10 +34,10 @@
     html, body {
       margin: 0;
       padding: 0;
+      min-height: 100%;
       background: var(--bg);
       color: var(--text);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      min-height: 100%;
     }
 
     body {
@@ -46,7 +50,9 @@
       max-width: 460px;
       min-height: 100vh;
       position: relative;
-      background: var(--bg);
+      background:
+        radial-gradient(circle at top center, rgba(90,70,214,0.10) 0%, rgba(90,70,214,0.00) 34%),
+        linear-gradient(180deg, #f6f5fb 0%, #f3f2f7 100%);
     }
 
     .screen {
@@ -54,69 +60,120 @@
       min-height: 100vh;
     }
 
-.brand-logo {
-  width: 108px;
-  height: 108px;
-  object-fit: contain;
-  display: block;
-}
-    
     .screen.active {
       display: block;
     }
 
     .home-screen {
-      padding: 20px 16px 124px;
+      padding: 20px 16px 126px;
     }
 
-.brand {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 26px;
-  padding-top: 8px;
-}
+    .hero-brand {
+      position: relative;
+      margin-bottom: 20px;
+    }
 
-.brand-logo {
-  width: 180px;
-  height: auto;
-  max-width: 70vw;
-  object-fit: contain;
-  display: block;
-  margin-bottom: 10px;
-  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.10));
-}
+    .hero-brand-art {
+      position: relative;
+      background: linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(249,247,255,0.96) 100%);
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: 34px;
+      padding: 18px 18px 8px;
+      box-shadow: var(--shadow-medium);
+      overflow: hidden;
+    }
 
-.brand-title {
-  font-size: 28px;
-  font-weight: 800;
-  color: #111111;
-  letter-spacing: 0.2px;
-  line-height: 1.1;
-}
+    .hero-glow {
+      position: absolute;
+      left: 50%;
+      bottom: -20px;
+      width: 240px;
+      height: 240px;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(90,70,214,0.18) 0%, rgba(90,70,214,0.05) 35%, rgba(90,70,214,0) 70%);
+      pointer-events: none;
+    }
 
-.brand-subtitle {
-  margin-top: 6px;
-  font-size: 13px;
-  color: var(--muted);
-  text-align: center;
-  line-height: 1.4;
-  max-width: 260px;
-}
+    .hero-logo {
+      position: relative;
+      display: block;
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+      margin: 0 auto;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 20px rgba(0,0,0,0.08));
+    }
 
+    .hero-copy {
+      text-align: center;
+      margin-top: 16px;
+    }
 
+    .hero-title {
+      margin: 0;
+      line-height: 0.95;
+      font-size: 42px;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+    }
 
-    .brand-title {
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: 0.2px;
+    .hero-title-main {
+      color: #121212;
+    }
+
+    .hero-title-accent {
+      color: var(--accent);
+      margin-left: 2px;
+    }
+
+    .hero-subtitle {
+      margin: 10px auto 0;
+      max-width: 290px;
+      font-size: 14px;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .hero-stat-card {
+      background: rgba(255,255,255,0.78);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.65);
+      border-radius: 20px;
+      padding: 14px 10px;
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-stat-value {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      margin-top: 6px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      font-weight: 700;
     }
 
     .card {
-      background: var(--surface);
-      border-radius: 18px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+      background: rgba(255,255,255,0.90);
+      backdrop-filter: blur(14px);
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.65);
+      box-shadow: var(--shadow-soft);
     }
 
     .history-card {
@@ -125,15 +182,18 @@
     }
 
     .history-title,
-    .section-title-row {
+    .toolbar {
       display: flex;
       align-items: center;
       gap: 8px;
+    }
+
+    .history-title {
       margin-bottom: 10px;
     }
 
     .history-title h3,
-    .section-title-row h2 {
+    .toolbar h2 {
       margin: 0;
       font-size: 16px;
       font-weight: 800;
@@ -160,16 +220,7 @@
     }
 
     .toolbar {
-      display: flex;
-      align-items: center;
-      gap: 12px;
       margin-bottom: 12px;
-    }
-
-    .toolbar h2 {
-      margin: 0;
-      font-size: 18px;
-      font-weight: 800;
     }
 
     .toolbar .spacer {
@@ -178,12 +229,12 @@
 
     .btn {
       border: 0;
-      border-radius: 14px;
-      padding: 12px 16px;
+      border-radius: 16px;
+      padding: 13px 16px;
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 800;
       cursor: pointer;
-      transition: transform .12s ease, opacity .12s ease, background .2s ease;
+      transition: transform .12s ease, opacity .12s ease, background .2s ease, box-shadow .2s ease;
     }
 
     .btn:active {
@@ -191,14 +242,15 @@
     }
 
     .btn-primary {
-      background: var(--accent);
+      background: linear-gradient(180deg, #6552de 0%, #4b3fb4 100%);
       color: white;
+      box-shadow: 0 10px 20px rgba(75,63,180,0.22);
     }
 
     .btn-outline {
-      background: white;
+      background: rgba(255,255,255,0.9);
       color: var(--accent);
-      border: 1px solid var(--accent);
+      border: 1px solid rgba(90,70,214,0.22);
     }
 
     .btn-danger {
@@ -215,7 +267,7 @@
 
     .plan-card,
     .library-card {
-      padding: 16px;
+      padding: 18px;
     }
 
     .row {
@@ -232,8 +284,9 @@
     }
 
     .plan-name {
-      font-size: 20px;
-      font-weight: 800;
+      font-size: 21px;
+      font-weight: 900;
+      letter-spacing: -0.4px;
       margin: 0;
     }
 
@@ -258,11 +311,12 @@
     }
 
     .chip {
-      background: rgba(75,63,180,0.1);
-      color: var(--accent);
-      padding: 6px 10px;
+      background: var(--accent-soft);
+      color: var(--accent-deep);
+      padding: 7px 11px;
       border-radius: 999px;
       font-size: 12px;
+      font-weight: 700;
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -287,7 +341,7 @@
       width: 46px;
       height: 46px;
       border-radius: 14px;
-      background: rgba(75,63,180,0.1);
+      background: rgba(90,70,214,0.10);
       display: grid;
       place-items: center;
       font-size: 20px;
@@ -316,22 +370,24 @@
       left: 50%;
       transform: translateX(-50%);
       bottom: 14px;
-      background: white;
-      border-radius: 28px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.1);
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,0.65);
+      border-radius: 30px;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.10);
       padding: 10px;
       display: flex;
-      gap: 14px;
+      gap: 12px;
       z-index: 20;
       width: max-content;
       max-width: calc(100vw - 32px);
     }
 
     .tab-btn {
-      width: 82px;
-      height: 82px;
-      border: 1px solid #e6e6ea;
-      background: #f4f4f6;
+      width: 88px;
+      height: 84px;
+      border: 1px solid rgba(0,0,0,0.05);
+      background: rgba(245,245,248,0.95);
       border-radius: 24px;
       display: flex;
       flex-direction: column;
@@ -340,14 +396,16 @@
       gap: 8px;
       cursor: pointer;
       color: #666a73;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 12px;
+      transition: all .18s ease;
     }
 
     .tab-btn.active {
-      background: var(--accent);
+      background: linear-gradient(180deg, #6552de 0%, #4b3fb4 100%);
       color: white;
-      border-color: var(--accent);
+      border-color: transparent;
+      box-shadow: 0 10px 20px rgba(75,63,180,0.24);
     }
 
     .empty-state {
@@ -695,6 +753,7 @@
       background: white;
       cursor: pointer;
       font-weight: 700;
+      text-align: left;
     }
 
     .hidden {
@@ -705,12 +764,36 @@
 <body>
   <div id="app">
     <section id="homeScreen" class="screen active home-screen">
-      
-<div class="brand">
-  <img src="Logo realistico.png" alt="GymMari logo" class="brand-logo" />
-  <div class="brand-title">gymmari!</div>
-  <div class="brand-subtitle">Le tue schede e la tua libreria esercizi</div>
-</div>
+      <div class="hero-brand">
+        <div class="hero-brand-art">
+          <div class="hero-glow"></div>
+          <img src="logo.png" alt="GymMari logo" class="hero-logo" />
+        </div>
+
+        <div class="hero-copy">
+          <h1 class="hero-title">
+            <span class="hero-title-main">Gym</span><span class="hero-title-accent">Mari!</span>
+          </h1>
+          <p class="hero-subtitle">
+            La tua palestra personale, elegante e semplice da usare.
+          </p>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat-card">
+          <div class="hero-stat-value" id="plansCountStat">0</div>
+          <div class="hero-stat-label">Schede</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-value" id="libraryCountStat">0</div>
+          <div class="hero-stat-label">Esercizi</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-value" id="historyCountStat">0</div>
+          <div class="hero-stat-label">Workout</div>
+        </div>
+      </div>
 
       <div id="homeContent"></div>
 
@@ -892,14 +975,14 @@
     function loadState() {
       try {
         const raw = localStorage.getItem(STORAGE_KEY);
-        if (!raw) return structuredClone(defaultState);
+        if (!raw) return clone(defaultState);
         const parsed = JSON.parse(raw);
         return {
-          ...structuredClone(defaultState),
+          ...clone(defaultState),
           ...parsed
         };
       } catch {
-        return structuredClone(defaultState);
+        return clone(defaultState);
       }
     }
 
@@ -907,7 +990,7 @@
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
     }
 
-    function structuredClone(obj) {
+    function clone(obj) {
       return JSON.parse(JSON.stringify(obj));
     }
 
@@ -940,6 +1023,14 @@
     }
 
     function renderHome() {
+      const plansCountEl = document.getElementById("plansCountStat");
+      const libraryCountEl = document.getElementById("libraryCountStat");
+      const historyCountEl = document.getElementById("historyCountStat");
+
+      if (plansCountEl) plansCountEl.textContent = state.plans.length;
+      if (libraryCountEl) libraryCountEl.textContent = state.library.length;
+      if (historyCountEl) historyCountEl.textContent = state.history.length;
+
       tabPlansBtn.classList.toggle("active", state.selectedTab === "plans");
       tabLibraryBtn.classList.toggle("active", state.selectedTab === "library");
 
@@ -1047,7 +1138,7 @@
 
     function openNewPlanEditor() {
       editingPlanIndex = null;
-      editingExercises = structuredClone(defaultState.plans[0].exercises);
+      editingExercises = clone(defaultState.plans[0].exercises);
       editorTitle.textContent = "Nuova scheda";
       planNameInput.value = "Nuova Scheda";
       workInput.value = 40;
@@ -1060,7 +1151,7 @@
     function openEditPlanEditor(index) {
       const plan = state.plans[index];
       editingPlanIndex = index;
-      editingExercises = structuredClone(plan.exercises);
+      editingExercises = clone(plan.exercises);
       editorTitle.textContent = "Modifica scheda";
       planNameInput.value = plan.name;
       workInput.value = plan.workSeconds;
@@ -1230,7 +1321,7 @@
     }
 
     function startWorkout(planIndex) {
-      const plan = structuredClone(state.plans[planIndex]);
+      const plan = clone(state.plans[planIndex]);
       workout = {
         active: true,
         finished: false,
@@ -1283,7 +1374,6 @@
         return;
       }
 
-      const running = workout.phase !== "idle";
       const currentExercise = workout.plan.exercises[workout.exerciseIndex]?.name ?? "";
       const nextExercise = workout.plan.exercises[(workout.exerciseIndex + 1) % workout.plan.exercises.length]?.name ?? "";
       const phaseLabel = phaseText(workout.phase);
