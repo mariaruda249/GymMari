@@ -1,0 +1,184 @@
+{
+  "plans": [
+    {
+      "id": "upper_body_base",
+      "name": "Upper Body Base",
+      "description": "Scheda semplice ma completa per parte alta, adatta a costruire forza e continuità.",
+      "goal": "Forza generale parte alta",
+      "level": "Base",
+      "workSeconds": 40,
+      "restSeconds": 20,
+      "rounds": 3,
+      "exerciseIds": [
+        "push_up_incline_chair",
+        "single_arm_row_chair",
+        "dumbbell_shoulder_press",
+        "bicep_curl",
+        "chair_dips",
+        "band_pull_apart"
+      ]
+    },
+    {
+      "id": "full_body_quick",
+      "name": "Full Body Quick",
+      "description": "Allenamento rapido total body per giorni con poco tempo ma buona attivazione complessiva.",
+      "goal": "Total body veloce",
+      "level": "Base",
+      "workSeconds": 35,
+      "restSeconds": 15,
+      "rounds": 3,
+      "exerciseIds": [
+        "bodyweight_squat",
+        "push_up_knees",
+        "band_row",
+        "glute_bridge",
+        "plank",
+        "jumping_jacks"
+      ]
+    },
+    {
+      "id": "lower_body_glutes",
+      "name": "Lower Body & Glutes",
+      "description": "Focus su gambe e glutei con esercizi efficaci e realistici da fare a casa.",
+      "goal": "Glutei e gambe",
+      "level": "Base",
+      "workSeconds": 45,
+      "restSeconds": 20,
+      "rounds": 3,
+      "exerciseIds": [
+        "goblet_squat",
+        "reverse_lunge",
+        "hip_thrust_chair",
+        "romanian_deadlift_dumbbells",
+        "side_leg_raise",
+        "standing_calf_raise"
+      ]
+    },
+    {
+      "id": "back_posture",
+      "name": "Schiena & Postura",
+      "description": "Scheda utile per rinforzare la schiena, migliorare postura e stabilità scapolare.",
+      "goal": "Postura e dorso",
+      "level": "Base",
+      "workSeconds": 40,
+      "restSeconds": 20,
+      "rounds": 3,
+      "exerciseIds": [
+        "band_pull_apart",
+        "band_row",
+        "rear_delt_fly",
+        "single_arm_row_chair",
+        "bird_dog",
+        "dead_hang_bar"
+      ]
+    },
+    {
+      "id": "core_stability",
+      "name": "Core Stability",
+      "description": "Routine per addome e stabilità del tronco, utile anche come supporto ad altre schede.",
+      "goal": "Core e stabilità",
+      "level": "Base",
+      "workSeconds": 35,
+      "restSeconds": 15,
+      "rounds": 3,
+      "exerciseIds": [
+        "plank",
+        "dead_bug",
+        "bird_dog",
+        "russian_twist",
+        "side_plank",
+        "hollow_hold"
+      ]
+    },
+    {
+      "id": "pull_up_preparation",
+      "name": "Pull Up Preparation",
+      "description": "Progressione realistica per costruire forza verso le trazioni usando barra ed elastico.",
+      "goal": "Preparazione trazioni",
+      "level": "Intermedio",
+      "workSeconds": 30,
+      "restSeconds": 25,
+      "rounds": 4,
+      "exerciseIds": [
+        "dead_hang_bar",
+        "scapular_pull_up",
+        "assisted_pull_up_band",
+        "negative_pull_up",
+        "band_row",
+        "bicep_curl"
+      ]
+    },
+    {
+      "id": "upper_body_dumbbells",
+      "name": "Upper Body con Manubri",
+      "description": "Scheda concreta per sfruttare i pesetti leggeri al meglio su spalle, braccia e schiena.",
+      "goal": "Tono e resistenza parte alta",
+      "level": "Base",
+      "workSeconds": 40,
+      "restSeconds": 20,
+      "rounds": 3,
+      "exerciseIds": [
+        "dumbbell_shoulder_press",
+        "lateral_raise",
+        "rear_delt_fly",
+        "bicep_curl",
+        "hammer_curl",
+        "single_arm_row_chair"
+      ]
+    },
+    {
+      "id": "legs_balance_unilateral",
+      "name": "Legs Balance Unilateral",
+      "description": "Lavoro su gambe, equilibrio e controllo con esercizi unilaterali molto utili a casa.",
+      "goal": "Equilibrio e forza gambe",
+      "level": "Intermedio",
+      "workSeconds": 40,
+      "restSeconds": 20,
+      "rounds": 3,
+      "exerciseIds": [
+        "split_squat",
+        "step_up_chair",
+        "single_leg_glute_bridge",
+        "bulgarian_split_squat",
+        "seated_calf_raise",
+        "fire_hydrant"
+      ]
+    },
+    {
+      "id": "cardio_toning_home",
+      "name": "Cardio & Toning Home",
+      "description": "Circuito dinamico per alzare il battito e tonificare senza attrezzatura complessa.",
+      "goal": "Resistenza e tonificazione",
+      "level": "Base",
+      "workSeconds": 30,
+      "restSeconds": 15,
+      "rounds": 4,
+      "exerciseIds": [
+        "jumping_jacks",
+        "bodyweight_squat",
+        "mountain_climber",
+        "push_up_wall",
+        "reverse_lunge",
+        "plank"
+      ]
+    },
+    {
+      "id": "full_body_strength_home",
+      "name": "Full Body Strength Home",
+      "description": "Scheda completa e realistica per allenare tutto il corpo con attrezzi domestici e pesetti.",
+      "goal": "Forza generale total body",
+      "level": "Intermedio",
+      "workSeconds": 45,
+      "restSeconds": 20,
+      "rounds": 3,
+      "exerciseIds": [
+        "goblet_squat",
+        "push_up_classic",
+        "bent_over_row_dumbbell",
+        "romanian_deadlift_dumbbells",
+        "dumbbell_shoulder_press",
+        "russian_twist"
+      ]
+    }
+  ]
+}
