@@ -1,0 +1,883 @@
+{
+  "library": [
+    {
+      "id": "push_up_wall",
+      "name": "Wall Push Up",
+      "equipment": [
+        "Corpo libero",
+        "Parete"
+      ],
+      "muscleGroups": [
+        "Petto",
+        "Spalle",
+        "Tricipiti"
+      ],
+      "level": "Base",
+      "notes": "Piegamento in piedi contro il muro, utile per iniziare e curare l'allineamento."
+    },
+    {
+      "id": "push_up_incline_chair",
+      "name": "Incline Push Up su Sedia",
+      "equipment": [
+        "Corpo libero",
+        "Sedia"
+      ],
+      "muscleGroups": [
+        "Petto",
+        "Spalle",
+        "Tricipiti",
+        "Core"
+      ],
+      "level": "Base",
+      "notes": "Piegamento con mani su una sedia stabile, più facile del push up a terra."
+    },
+    {
+      "id": "push_up_knees",
+      "name": "Knee Push Up",
+      "equipment": [
+        "Corpo libero"
+      ],
+      "muscleGroups": [
+        "Petto",
+        "Spalle",
+        "Tricipiti",
+        "Core"
+      ],
+      "level": "Base",
+      "notes": "Piegamento sulle ginocchia per rinforzare parte alta e stabilità del tronco."
+    },
+    {
+      "id": "push_up_classic",
+      "name": "Push Up",
+      "equipment": [
+        "Corpo libero"
+      ],
+      "muscleGroups": [
+        "Petto",
+        "Spalle",
+        "Tricipiti",
+        "Core"
+      ],
+      "level": "Intermedio",
+      "notes": "Piegamento classico a terra, mantieni corpo in linea e addome attivo."
+    },
+    {
+      "id": "push_up_close_grip",
+      "name": "Close Grip Push Up",
+      "equipment": [
+        "Corpo libero"
+      ],
+      "muscleGroups": [
+        "Tricipiti",
+        "Petto",
+        "Spalle"
+      ],
+      "level": "Intermedio",
+      "notes": "Piegamento con mani ravvicinate per accentuare il lavoro sui tricipiti."
+    },
+    {
+      "id": "chair_dips",
+      "name": "Chair Dips",
+      "equipment": [
+        "Sedia"
+      ],
+      "muscleGroups": [
+        "Tricipiti",
+        "Spalle",
+        "Petto"
+      ],
+      "level": "Intermedio",
+      "notes": "Dip con mani su sedia stabile, scendi controllando spalle e gomiti."
+    },
+    {
+      "id": "bench_triceps_extension_band",
+      "name": "Triceps Extension con Elastico",
+      "equipment": [
+        "Elastico"
+      ],
+      "muscleGroups": [
+        "Tricipiti"
+      ],
+      "level": "Base",
+      "notes": "Estensione sopra la testa con elastico per isolare i tricipiti con controllo."
+    },
+    {
+      "id": "dumbbell_shoulder_press",
+      "name": "Shoulder Press con Manubri",
+      "equipment": [
+        "Manubri"
+      ],
+      "muscleGroups": [
+        "Spalle",
+        "Tricipiti"
+      ],
+      "level": "Base",
+      "notes": "Spinta sopra la testa con pesetti, mantieni addome attivo e schiena neutra."
+    },
+    {
+      "id": "lateral_raise",
+      "name": "Lateral Raise",
+      "equipment": [
+        "Manubri"
+      ],
+      "muscleGroups": [
+        "Spalle"
+      ],
+      "level": "Base",
+      "notes": "Alzata laterale controllata per il deltoide, senza slanci con il busto."
+    },
+    {
+      "id": "front_raise",
+      "name": "Front Raise",
+      "equipment": [
+        "Manubri"
+      ],
+      "muscleGroups": [
+        "Spalle"
+      ],
+      "level": "Base",
+      "notes": "Alzata frontale con pesetti leggeri per il controllo della spalla."
+    },
+    {
+      "id": "rear_delt_fly",
+      "name": "Rear Delt Fly",
+      "equipment": [
+        "Manubri"
+      ],
+      "muscleGroups": [
+        "Spalle posteriori",
+        "Schiena alta"
+      ],
+      "level": "Intermedio",
+      "notes": "Apertura a busto inclinato per parte posteriore delle spalle e postura."
+    },
+    {
+      "id": "bicep_curl",
+      "name": "Bicep Curl",
+      "equipment": [
+        "Manubri"
+      ],
+      "muscleGroups": [
+        "Bicipiti"
+      ],
+      "level": "Base",
+      "notes": "Curl classico con gomiti fermi vicino al busto e movimento pulito."
+    },
+    {
+      "id": "hammer_curl",
+      "name": "Hammer Curl",
+      "equipment": [
+        "Manubri"
+      ],
+      "muscleGroups": [
+        "Bicipiti",
+        "Avambracci"
+      ],
+      "level": "Base",
+      "notes": "Curl a presa neutra per lavorare braccia e avambracci con più stabilità."
+    },
+    {
+      "id": "concentration_curl",
+      "name": "Concentration Curl",
+      "equipment": [
+        "Manubrio",
+        "Sedia"
+      ],
+      "muscleGroups": [
+        "Bicipiti"
+      ],
+      "level": "Intermedio",
+      "notes": "Curl da seduta con gomito appoggiato alla coscia per maggiore isolamento."
+    },
+    {
+      "id": "upright_row_band",
+      "name": "Upright Row con Elastico",
+      "equipment": [
+        "Elastico"
+      ],
+      "muscleGroups": [
+        "Spalle",
+        "Trapezi"
+      ],
+      "level": "Intermedio",
+      "notes": "Tirata verticale con elastico, esegui fluido senza alzare eccesso le spalle."
+    },
+    {
+      "id": "band_pull_apart",
+      "name": "Band Pull Apart",
+      "equipment": [
+        "Elastico"
+      ],
+      "muscleGroups": [
+        "Schiena alta",
+        "Spalle posteriori"
+      ],
+      "level": "Base",
+      "notes": "Apertura dell'elastico davanti al petto per migliorare postura e controllo scapolare."
+    },
+    {
+      "id": "bent_over_row_dumbbell",
+      "name": "Bent Over Row",
+      "equipment": [
+        "Manubri"
+      ],
+      "muscleGroups": [
+        "Schiena",
+        "Bicipiti",
+        "Core"
+      ],
+      "level": "Intermedio",
+      "notes": "Rematore a busto inclinato con schiena neutra e gomiti che tirano indietro."
+    },
+    {
+      "id": "single_arm_row_chair",
+      "name": "Single Arm Row su Sedia",
+      "equipment": [
+        "Manubrio",
+        "Sedia"
+      ],
+      "muscleGroups": [
+        "Schiena",
+        "Bicipiti"
+      ],
+      "level": "Base",
+      "notes": "Rematore a un braccio con supporto su sedia per più stabilità del busto."
+    },
+    {
+      "id": "band_row",
+      "name": "Row con Elastico",
+      "equipment": [
+        "Elastico"
+      ],
+      "muscleGroups": [
+        "Schiena",
+        "Bicipiti"
+      ],
+      "level": "Base",
+      "notes": "Rematore con elastico per rinforzare dorsali e postura in modo progressivo."
+    },
+    {
+      "id": "table_row",
+      "name": "Table Row",
+      "equipment": [
+        "Tavolo"
+      ],
+      "muscleGroups": [
+        "Schiena",
+        "Bicipiti",
+        "Core"
+      ],
+      "level": "Intermedio",
+      "notes": "Trazione orizzontale sotto un tavolo stabile, controlla scapole e addome."
+    },
+    {
+      "id": "dead_hang_bar",
+      "name": "Dead Hang",
+      "equipment": [
+        "Barra per trazioni"
+      ],
+      "muscleGroups": [
+        "Presa",
+        "Schiena",
+        "Spalle"
+      ],
+      "level": "Base",
+      "notes": "Sospensione alla barra per rinforzare presa, spalle e controllo scapolare."
+    },
+    {
+      "id": "scapular_pull_up",
+      "name": "Scapular Pull Up",
+      "equipment": [
+        "Barra per trazioni"
+      ],
+      "muscleGroups": [
+        "Schiena alta",
+        "Spalle"
+      ],
+      "level": "Intermedio",
+      "notes": "Piccolo movimento di depressione scapolare alla barra, utile per preparare alle trazioni."
+    },
+    {
+      "id": "negative_pull_up",
+      "name": "Negative Pull Up",
+      "equipment": [
+        "Barra per trazioni"
+      ],
+      "muscleGroups": [
+        "Schiena",
+        "Bicipiti",
+        "Core"
+      ],
+      "level": "Intermedio",
+      "notes": "Discesa lenta dalla posizione alta della trazione per sviluppare forza specifica."
+    },
+    {
+      "id": "assisted_pull_up_band",
+      "name": "Assisted Pull Up con Elastico",
+      "equipment": [
+        "Barra per trazioni",
+        "Elastico"
+      ],
+      "muscleGroups": [
+        "Schiena",
+        "Bicipiti",
+        "Core"
+      ],
+      "level": "Intermedio",
+      "notes": "Trazione assistita da elastico per imparare il gesto e costruire forza progressiva."
+    },
+    {
+      "id": "bodyweight_squat",
+      "name": "Bodyweight Squat",
+      "equipment": [
+        "Corpo libero"
+      ],
+      "muscleGroups": [
+        "Quadricipiti",
+        "Glutei",
+        "Core"
+      ],
+      "level": "Base",
+      "notes": "Squat a corpo libero con piedi stabili e schiena neutra per costruire tecnica."
+    },
+    {
+      "id": "chair_squat",
+      "name": "Chair Squat",
+      "equipment": [
+        "Sedia"
+      ],
+      "muscleGroups": [
+        "Quadricipiti",
+        "Glutei"
+      ],
+      "level": "Base",
+      "notes": "Squat usando la sedia come riferimento per controllare profondità e postura."
+    },
+    {
+      "id": "goblet_squat",
+      "name": "Goblet Squat",
+      "equipment": [
+        "Manubrio"
+      ],
+      "muscleGroups": [
+        "Quadricipiti",
+        "Glutei",
+        "Core"
+      ],
+      "level": "Base",
+      "notes": "Squat con peso al petto che aiuta a tenere il busto più verticale."
+    },
+    {
+      "id": "sumo_squat",
+      "name": "Sumo Squat",
+      "equipment": [
+        "Corpo libero",
+        "Manubrio"
+      ],
+      "muscleGroups": [
+        "Adduttori",
+        "Glutei",
+        "Quadricipiti"
+      ],
+      "level": "Base",
+      "notes": "Squat a stance larga per coinvolgere di più interno coscia e glutei."
+    },
+    {
+      "id": "reverse_lunge",
+      "name": "Reverse Lunge",
+      "equipment": [
+        "Corpo libero"
+      ],
+      "muscleGroups": [
+        "Glutei",
+        "Quadricipiti",
+        "Core"
+      ],
+      "level": "Base",
+      "notes": "Affondo indietro controllato, più gestibile per equilibrio e ginocchia."
+    },
+    {
+      "id": "walking_lunge",
+      "name": "Walking Lunge",
+      "equipment": [
+        "Corpo libero",
+        "Manubri"
+      ],
+      "muscleGroups": [
+        "Glutei",
+        "Quadricipiti",
+        "Femoriali"
+      ],
+      "level": "Intermedio",
+      "notes": "Affondi in avanzamento per forza e stabilità su entrambe le gambe."
+    },
+    {
+      "id": "split_squat",
+      "name": "Split Squat",
+      "equipment": [
+        "Corpo libero",
+        "Manubri"
+      ],
+      "muscleGroups": [
+        "Glutei",
+        "Quadricipiti"
+      ],
+      "level": "Intermedio",
+      "notes": "Affondo statico che permette di concentrarsi sul controllo del carico."
+    },
+    {
+      "id": "bulgarian_split_squat",
+      "name": "Bulgarian Split Squat",
+      "equipment": [
+        "Sedia",
+        "Manubri"
+      ],
+      "muscleGroups": [
+        "Glutei",
+        "Quadricipiti",
+        "Core"
+      ],
+      "level": "Intermedio",
+      "notes": "Gamba posteriore rialzata su sedia per un lavoro unilaterale intenso."
+    },
+    {
+      "id": "step_up_chair",
+      "name": "Step Up su Sedia",
+      "equipment": [
+        "Sedia"
+      ],
+      "muscleGroups": [
+        "Glutei",
+        "Quadricipiti",
+        "Polpacci"
+      ],
+      "level": "Base",
+      "notes": "Salita su supporto stabile per rinforzare gamba e equilibrio in modo funzionale."
+    },
+    {
+      "id": "glute_bridge",
+      "name": "Glute Bridge",
+      "equipment": [
+        "Corpo libero"
+      ],
+      "muscleGroups": [
+        "Glutei",
+        "Femoriali",
+        "Core"
+      ],
+      "level": "Base",
+      "notes": "Ponte glutei da terra, focalizzati sulla spinta del bacino verso l'alto."
+    },
+    {
+      "id": "single_leg_glute_bridge",
+      "name": "Single Leg Glute Bridge",
+      "equipment": [
+        "Corpo libero"
+      ],
+      "muscleGroups": [
+        "Glutei",
+        "Femoriali",
+        "Core"
+      ],
+      "level": "Intermedio",
+      "notes": "Variante a una gamba per aumentare intensità e stabilità del bacino."
+    },
+    {
+      "id": "hip_thrust_chair",
+      "name": "Hip Thrust su Sedia",
+      "equipment": [
+        "Sedia",
+        "Manubrio"
+      ],
+      "muscleGroups": [
+        "Glutei",
+        "Femoriali"
+      ],
+      "level": "Intermedio",
+      "notes": "Spinta d'anca con schiena alta appoggiata alla sedia, ottima per i glutei."
+    },
+    {
+      "id": "romanian_deadlift_dumbbells",
+      "name": "Romanian Deadlift",
+      "equipment": [
+        "Manubri"
+      ],
+      "muscleGroups": [
+        "Femoriali",
+        "Glutei",
+        "Schiena"
+      ],
+      "level": "Intermedio",
+      "notes": "Piegamento d'anca con manubri, senti l'allungamento sul retro coscia."
+    },
+    {
+      "id": "good_morning_band",
+      "name": "Good Morning con Elastico",
+      "equipment": [
+        "Elastico"
+      ],
+      "muscleGroups": [
+        "Femoriali",
+        "Glutei",
+        "Schiena"
+      ],
+      "level": "Base",
+      "notes": "Movimento d'anca con elastico per imparare hinge e rinforzare catena posteriore."
+    },
+    {
+      "id": "standing_calf_raise",
+      "name": "Standing Calf Raise",
+      "equipment": [
+        "Corpo libero"
+      ],
+      "muscleGroups": [
+        "Polpacci"
+      ],
+      "level": "Base",
+      "notes": "Sollevamento sui polpacci in piedi con pausa in alto e discesa controllata."
+    },
+    {
+      "id": "seated_calf_raise",
+      "name": "Seated Calf Raise",
+      "equipment": [
+        "Sedia",
+        "Manubrio"
+      ],
+      "muscleGroups": [
+        "Polpacci"
+      ],
+      "level": "Base",
+      "notes": "Versione da seduta per lavorare i polpacci in modo semplice e preciso."
+    },
+    {
+      "id": "side_leg_raise",
+      "name": "Side Leg Raise",
+      "equipment": [
+        "Corpo libero",
+        "Cavigliere"
+      ],
+      "muscleGroups": [
+        "Gluteo medio",
+        "Abduttori"
+      ],
+      "level": "Base",
+      "notes": "Abduzione laterale della gamba per stabilità del bacino e gluteo medio."
+    },
+    {
+      "id": "donkey_kick",
+      "name": "Donkey Kick",
+      "equipment": [
+        "Corpo libero",
+        "Cavigliere"
+      ],
+      "muscleGroups": [
+        "Glutei",
+        "Core"
+      ],
+      "level": "Base",
+      "notes": "Spinta della gamba indietro in quadrupedia per attivare i glutei."
+    },
+    {
+      "id": "fire_hydrant",
+      "name": "Fire Hydrant",
+      "equipment": [
+        "Corpo libero",
+        "Cavigliere"
+      ],
+      "muscleGroups": [
+        "Gluteo medio",
+        "Core"
+      ],
+      "level": "Base",
+      "notes": "Apertura laterale del ginocchio in quadrupedia per rinforzare glutei e controllo."
+    },
+    {
+      "id": "plank",
+      "name": "Plank",
+      "equipment": [
+        "Corpo libero"
+      ],
+      "muscleGroups": [
+        "Core",
+        "Spalle"
+      ],
+      "level": "Base",
+      "notes": "Tenuta isometrica sull'avambraccio, mantieni linea retta e addome attivo."
+    },
+    {
+      "id": "side_plank",
+      "name": "Side Plank",
+      "equipment": [
+        "Corpo libero"
+      ],
+      "muscleGroups": [
+        "Obliqui",
+        "Core",
+        "Spalle"
+      ],
+      "level": "Intermedio",
+      "notes": "Plank laterale per core e stabilità del bacino con appoggio su un lato."
+    },
+    {
+      "id": "dead_bug",
+      "name": "Dead Bug",
+      "equipment": [
+        "Corpo libero"
+      ],
+      "muscleGroups": [
+        "Core"
+      ],
+      "level": "Base",
+      "notes": "Movimento alternato di braccia e gambe da supina per controllo addominale profondo."
+    },
+    {
+      "id": "bird_dog",
+      "name": "Bird Dog",
+      "equipment": [
+        "Corpo libero"
+      ],
+      "muscleGroups": [
+        "Core",
+        "Schiena",
+        "Glutei"
+      ],
+      "level": "Base",
+      "notes": "Estensione opposta braccio-gamba in quadrupedia per stabilità e coordinazione."
+    },
+    {
+      "id": "russian_twist",
+      "name": "Russian Twist",
+      "equipment": [
+        "Corpo libero",
+        "Manubrio"
+      ],
+      "muscleGroups": [
+        "Obliqui",
+        "Core"
+      ],
+      "level": "Base",
+      "notes": "Rotazione del tronco da seduta, tieni petto aperto e movimento controllato."
+    },
+    {
+      "id": "mountain_climber",
+      "name": "Mountain Climber",
+      "equipment": [
+        "Corpo libero"
+      ],
+      "muscleGroups": [
+        "Core",
+        "Spalle",
+        "Flessori anca"
+      ],
+      "level": "Intermedio",
+      "notes": "Corsa in plank per lavoro dinamico su core e resistenza."
+    },
+    {
+      "id": "hollow_hold",
+      "name": "Hollow Hold",
+      "equipment": [
+        "Corpo libero"
+      ],
+      "muscleGroups": [
+        "Core"
+      ],
+      "level": "Intermedio",
+      "notes": "Tenuta addominale in posizione scavata, schiena bassa aderente al pavimento."
+    },
+    {
+      "id": "jumping_jacks",
+      "name": "Jumping Jacks",
+      "equipment": [
+        "Corpo libero"
+      ],
+      "muscleGroups": [
+        "Total body",
+        "Cardio"
+      ],
+      "level": "Base",
+      "notes": "Saltelli coordinati per alzare il battito e scaldare tutto il corpo."
+    }
+  ],
+  "plans": [
+    {
+      "id": "upper_body_base",
+      "name": "Upper Body Base",
+      "description": "Scheda semplice ma completa per parte alta, adatta a costruire forza e continuità.",
+      "goal": "Forza generale parte alta",
+      "level": "Base",
+      "workSeconds": 40,
+      "restSeconds": 20,
+      "rounds": 3,
+      "exerciseIds": [
+        "push_up_incline_chair",
+        "single_arm_row_chair",
+        "dumbbell_shoulder_press",
+        "bicep_curl",
+        "chair_dips",
+        "band_pull_apart"
+      ]
+    },
+    {
+      "id": "full_body_quick",
+      "name": "Full Body Quick",
+      "description": "Allenamento rapido total body per giorni con poco tempo ma buona attivazione complessiva.",
+      "goal": "Total body veloce",
+      "level": "Base",
+      "workSeconds": 35,
+      "restSeconds": 15,
+      "rounds": 3,
+      "exerciseIds": [
+        "bodyweight_squat",
+        "push_up_knees",
+        "band_row",
+        "glute_bridge",
+        "plank",
+        "jumping_jacks"
+      ]
+    },
+    {
+      "id": "lower_body_glutes",
+      "name": "Lower Body & Glutes",
+      "description": "Focus su gambe e glutei con esercizi efficaci e realistici da fare a casa.",
+      "goal": "Glutei e gambe",
+      "level": "Base",
+      "workSeconds": 45,
+      "restSeconds": 20,
+      "rounds": 3,
+      "exerciseIds": [
+        "goblet_squat",
+        "reverse_lunge",
+        "hip_thrust_chair",
+        "romanian_deadlift_dumbbells",
+        "side_leg_raise",
+        "standing_calf_raise"
+      ]
+    },
+    {
+      "id": "back_posture",
+      "name": "Schiena & Postura",
+      "description": "Scheda utile per rinforzare la schiena, migliorare postura e stabilità scapolare.",
+      "goal": "Postura e dorso",
+      "level": "Base",
+      "workSeconds": 40,
+      "restSeconds": 20,
+      "rounds": 3,
+      "exerciseIds": [
+        "band_pull_apart",
+        "band_row",
+        "rear_delt_fly",
+        "single_arm_row_chair",
+        "bird_dog",
+        "dead_hang_bar"
+      ]
+    },
+    {
+      "id": "core_stability",
+      "name": "Core Stability",
+      "description": "Routine per addome e stabilità del tronco, utile anche come supporto ad altre schede.",
+      "goal": "Core e stabilità",
+      "level": "Base",
+      "workSeconds": 35,
+      "restSeconds": 15,
+      "rounds": 3,
+      "exerciseIds": [
+        "plank",
+        "dead_bug",
+        "bird_dog",
+        "russian_twist",
+        "side_plank",
+        "hollow_hold"
+      ]
+    },
+    {
+      "id": "pull_up_preparation",
+      "name": "Pull Up Preparation",
+      "description": "Progressione realistica per costruire forza verso le trazioni usando barra ed elastico.",
+      "goal": "Preparazione trazioni",
+      "level": "Intermedio",
+      "workSeconds": 30,
+      "restSeconds": 25,
+      "rounds": 4,
+      "exerciseIds": [
+        "dead_hang_bar",
+        "scapular_pull_up",
+        "assisted_pull_up_band",
+        "negative_pull_up",
+        "band_row",
+        "bicep_curl"
+      ]
+    },
+    {
+      "id": "upper_body_dumbbells",
+      "name": "Upper Body con Manubri",
+      "description": "Scheda concreta per sfruttare i pesetti leggeri al meglio su spalle, braccia e schiena.",
+      "goal": "Tono e resistenza parte alta",
+      "level": "Base",
+      "workSeconds": 40,
+      "restSeconds": 20,
+      "rounds": 3,
+      "exerciseIds": [
+        "dumbbell_shoulder_press",
+        "lateral_raise",
+        "rear_delt_fly",
+        "bicep_curl",
+        "hammer_curl",
+        "single_arm_row_chair"
+      ]
+    },
+    {
+      "id": "legs_balance_unilateral",
+      "name": "Legs Balance Unilateral",
+      "description": "Lavoro su gambe, equilibrio e controllo con esercizi unilaterali molto utili a casa.",
+      "goal": "Equilibrio e forza gambe",
+      "level": "Intermedio",
+      "workSeconds": 40,
+      "restSeconds": 20,
+      "rounds": 3,
+      "exerciseIds": [
+        "split_squat",
+        "step_up_chair",
+        "single_leg_glute_bridge",
+        "bulgarian_split_squat",
+        "seated_calf_raise",
+        "fire_hydrant"
+      ]
+    },
+    {
+      "id": "cardio_toning_home",
+      "name": "Cardio & Toning Home",
+      "description": "Circuito dinamico per alzare il battito e tonificare senza attrezzatura complessa.",
+      "goal": "Resistenza e tonificazione",
+      "level": "Base",
+      "workSeconds": 30,
+      "restSeconds": 15,
+      "rounds": 4,
+      "exerciseIds": [
+        "jumping_jacks",
+        "bodyweight_squat",
+        "mountain_climber",
+        "push_up_wall",
+        "reverse_lunge",
+        "plank"
+      ]
+    },
+    {
+      "id": "full_body_strength_home",
+      "name": "Full Body Strength Home",
+      "description": "Scheda completa e realistica per allenare tutto il corpo con attrezzi domestici e pesetti.",
+      "goal": "Forza generale total body",
+      "level": "Intermedio",
+      "workSeconds": 45,
+      "restSeconds": 20,
+      "rounds": 3,
+      "exerciseIds": [
+        "goblet_squat",
+        "push_up_classic",
+        "bent_over_row_dumbbell",
+        "romanian_deadlift_dumbbells",
+        "dumbbell_shoulder_press",
+        "russian_twist"
+      ]
+    }
+  ]
+}
