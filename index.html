@@ -473,30 +473,46 @@ let workout = {
       return await response.json();
     }
 
-    async function loadState() {
-      try {
-        const raw = localStorage.getItem(STORAGE_KEY);
-        if (raw) {
-          return { ...clone(defaultState), ...JSON.parse(raw) };
-        }
+async function loadState() {
+  try {
+    const dataFile = await loadDefaultDataFile();
+    const baseState = {
+      selectedTab: "plans",
+      plans: dataFile.plans || [],
+      library: dataFile.library || [],
+      history: []
+    };
 
-        const oldRaw = localStorage.getItem("gymmari_state_v1");
-        if (oldRaw) {
-          return { ...clone(defaultState), ...JSON.parse(oldRaw) };
-        }
-
-        const dataFile = await loadDefaultDataFile();
-        return {
-          selectedTab: "plans",
-          plans: dataFile.plans || [],
-          library: dataFile.library || [],
-          history: []
-        };
-      } catch (error) {
-        console.error("Errore caricamento stato:", error);
-        return clone(defaultState);
-      }
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      const saved = JSON.parse(raw);
+      return {
+        ...baseState,
+        ...saved,
+        plans: Array.isArray(saved.plans) && saved.plans.length ? saved.plans : baseState.plans,
+        library: Array.isArray(saved.library) && saved.library.length ? saved.library : baseState.library,
+        history: Array.isArray(saved.history) ? saved.history : []
+      };
     }
+
+    const oldRaw = localStorage.getItem("gymmari_state_v1");
+    if (oldRaw) {
+      const saved = JSON.parse(oldRaw);
+      return {
+        ...baseState,
+        ...saved,
+        plans: Array.isArray(saved.plans) && saved.plans.length ? saved.plans : baseState.plans,
+        library: Array.isArray(saved.library) && saved.library.length ? saved.library : baseState.library,
+        history: Array.isArray(saved.history) ? saved.history : []
+      };
+    }
+
+    return baseState;
+  } catch (error) {
+    console.error("Errore caricamento stato:", error);
+    return clone(defaultState);
+  }
+}
 
     function migrateLegacyState() {
       if (!state || !Array.isArray(state.library)) return;
