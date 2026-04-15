@@ -349,7 +349,7 @@
           <input id="restInput" type="number" min="5" max="60" />
         </div>
         <div class="field-group">
-          <label class="label">Round</label>
+          <label class="label">Serie</label>
           <input id="roundsInput" type="number" min="1" max="10" />
         </div>
       </div>
@@ -396,17 +396,17 @@
     let editingPlanIndex = null;
     let editingExerciseIds = [];
 
-    let workout = {
-      active: false,
-      finished: false,
-      plan: null,
-      phase: "idle",
-      secondsLeft: 0,
-      exerciseIndex: 0,
-      currentRound: 1,
-      isPaused: false,
-      timerId: null
-    };
+let workout = {
+  active: false,
+  finished: false,
+  plan: null,
+  phase: "idle",
+  secondsLeft: 0,
+  exerciseIndex: 0,
+  currentSet: 1,
+  isPaused: false,
+  timerId: null
+};
 
     const homeScreen = document.getElementById("homeScreen");
     const workoutScreen = document.getElementById("workoutScreen");
@@ -1010,7 +1010,7 @@
         phase: "idle",
         secondsLeft: plan.workSeconds,
         exerciseIndex: 0,
-        currentRound: 1,
+        currentSet: 1,
         isPaused: false,
         timerId: null
       };
@@ -1121,7 +1121,7 @@
               `
               : `
                 <div class="phase-pill">${phaseLabel}</div>
-                ${workout.phase !== "countdown" ? `<div class="round-label">Round ${workout.currentRound} / ${workout.plan.rounds}</div>` : ``}
+                ${workout.phase !== "countdown" ? `<div class="round-label">Serie ${workout.currentSet} / ${workout.plan.rounds}</div>` : ``}
                 <div class="workout-body">
                   <div>
                     <div class="exercise-name">${escapeHtml(workout.phase === "countdown" ? "Si parte" : (currentExercise?.name || ""))}</div>
@@ -1224,15 +1224,41 @@
       onIntervalEnd();
     }
 
-    function onIntervalEnd() {
-      const exerciseCount = (workout.plan.exerciseIds || []).length;
+function onIntervalEnd() {
+  const exerciseCount = (workout.plan.exerciseIds || []).length;
 
-      if (workout.phase === "countdown") {
-        workout.phase = "work";
-        workout.secondsLeft = workout.plan.workSeconds;
-        renderWorkout();
-        return;
-      }
+  if (workout.phase === "countdown") {
+    workout.phase = "work";
+    workout.secondsLeft = workout.plan.workSeconds;
+    renderWorkout();
+    return;
+  }
+
+  if (workout.phase === "work") {
+    const isLastExercise = workout.exerciseIndex === exerciseCount - 1;
+    const isLastSet = workout.currentSet === workout.plan.rounds;
+
+    if (isLastExercise && isLastSet) {
+      finishWorkout();
+      return;
+    }
+
+    if (workout.plan.restSeconds > 0) {
+      workout.phase = "rest";
+      workout.secondsLeft = workout.plan.restSeconds;
+      renderWorkout();
+    } else {
+      advanceExercise();
+      renderWorkout();
+    }
+    return;
+  }
+
+  if (workout.phase === "rest") {
+    advanceExercise();
+    renderWorkout();
+  }
+}
 
       if (workout.phase === "work") {
         const isLastExercise = workout.exerciseIndex === exerciseCount - 1;
@@ -1260,62 +1286,67 @@
       }
     }
 
-    function advanceExercise() {
-      const exerciseCount = (workout.plan.exerciseIds || []).length;
-      const isLastExercise = workout.exerciseIndex === exerciseCount - 1;
+function advanceExercise() {
+  const exerciseCount = (workout.plan.exerciseIds || []).length;
+  const isLastSetForExercise = workout.currentSet === workout.plan.rounds;
+  const isLastExercise = workout.exerciseIndex === exerciseCount - 1;
 
-      if (isLastExercise) {
-        workout.currentRound += 1;
-        workout.exerciseIndex = 0;
-      } else {
-        workout.exerciseIndex += 1;
-      }
-
-      workout.phase = "work";
-      workout.secondsLeft = workout.plan.workSeconds;
+  if (!isLastSetForExercise) {
+    workout.currentSet += 1;
+  } else {
+    workout.currentSet = 1;
+    if (!isLastExercise) {
+      workout.exerciseIndex += 1;
     }
+  }
 
-    function goNextExercise() {
-      if (workout.phase === "idle" || workout.phase === "finished" || workout.phase === "countdown") return;
+  workout.phase = "work";
+  workout.secondsLeft = workout.plan.workSeconds;
+}
 
-      const exerciseCount = (workout.plan.exerciseIds || []).length;
-      const isLastExercise = workout.exerciseIndex === exerciseCount - 1;
-      const isLastRound = workout.currentRound === workout.plan.rounds;
-      if (isLastExercise && isLastRound) return;
+function goNextExercise() {
+  if (workout.phase === "idle" || workout.phase === "finished" || workout.phase === "countdown") return;
 
-      if (isLastExercise) {
-        workout.currentRound += 1;
-        workout.exerciseIndex = 0;
-      } else {
-        workout.exerciseIndex += 1;
-      }
+  const exerciseCount = (workout.plan.exerciseIds || []).length;
+  const isLastExercise = workout.exerciseIndex === exerciseCount - 1;
+  const isLastSet = workout.currentSet === workout.plan.rounds;
 
-      workout.phase = "work";
-      workout.secondsLeft = workout.plan.workSeconds;
-      workout.isPaused = false;
-      renderWorkout();
-    }
+  if (isLastExercise && isLastSet) return;
 
-    function goPrevExercise() {
-      if (workout.phase === "idle" || workout.phase === "finished" || workout.phase === "countdown") return;
+  if (workout.currentSet < workout.plan.rounds) {
+    workout.currentSet += 1;
+  } else {
+    workout.currentSet = 1;
+    workout.exerciseIndex += 1;
+  }
 
-      const exerciseCount = (workout.plan.exerciseIds || []).length;
-      const isFirstExercise = workout.exerciseIndex === 0;
-      const isFirstRound = workout.currentRound === 1;
-      if (isFirstExercise && isFirstRound) return;
+  workout.phase = "work";
+  workout.secondsLeft = workout.plan.workSeconds;
+  workout.isPaused = false;
+  renderWorkout();
+}
 
-      if (isFirstExercise) {
-        workout.currentRound -= 1;
-        workout.exerciseIndex = exerciseCount - 1;
-      } else {
-        workout.exerciseIndex -= 1;
-      }
+function goPrevExercise() {
+  if (workout.phase === "idle" || workout.phase === "finished" || workout.phase === "countdown") return;
 
-      workout.phase = "work";
-      workout.secondsLeft = workout.plan.workSeconds;
-      workout.isPaused = false;
-      renderWorkout();
-    }
+  const exerciseCount = (workout.plan.exerciseIds || []).length;
+  const isFirstExercise = workout.exerciseIndex === 0;
+  const isFirstSet = workout.currentSet === 1;
+
+  if (isFirstExercise && isFirstSet) return;
+
+  if (workout.currentSet > 1) {
+    workout.currentSet -= 1;
+  } else {
+    workout.exerciseIndex -= 1;
+    workout.currentSet = workout.plan.rounds;
+  }
+
+  workout.phase = "work";
+  workout.secondsLeft = workout.plan.workSeconds;
+  workout.isPaused = false;
+  renderWorkout();
+}
 
     function togglePauseResume() {
       if (workout.phase === "countdown") return;
@@ -1328,7 +1359,7 @@
       workout.phase = "idle";
       workout.secondsLeft = workout.plan.workSeconds;
       workout.exerciseIndex = 0;
-      workout.currentRound = 1;
+      workout.currentSet = 1;
       workout.isPaused = false;
       workout.finished = false;
       renderWorkout();
