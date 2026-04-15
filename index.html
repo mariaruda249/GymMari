@@ -1276,31 +1276,6 @@ function onIntervalEnd() {
   }
 }
 
-      if (workout.phase === "work") {
-        const isLastExercise = workout.exerciseIndex === exerciseCount - 1;
-        const isLastRound = workout.currentRound === workout.plan.rounds;
-
-        if (isLastExercise && isLastRound) {
-          finishWorkout();
-          return;
-        }
-
-        if (workout.plan.restSeconds > 0) {
-          workout.phase = "rest";
-          workout.secondsLeft = workout.plan.restSeconds;
-          renderWorkout();
-        } else {
-          advanceExercise();
-          renderWorkout();
-        }
-        return;
-      }
-
-      if (workout.phase === "rest") {
-        advanceExercise();
-        renderWorkout();
-      }
-    }
 
 function advanceExercise() {
   const exerciseCount = (workout.plan.exerciseIds || []).length;
